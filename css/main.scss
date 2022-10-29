@@ -1,0 +1,76 @@
+.margin-right-40 {
+  margin-right: 40px;
+} 
+
+#wrap {
+  width: 100%;
+  .container {
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    #nav {
+      background-color: black;
+      width: 200px;
+      height: 100vh;
+      color: #fff;
+      transform: translateX(-150px);
+      transition: all 1s;
+      padding: 25px;
+      h2 {
+        text-align: right;
+      }
+      &:hover {
+        transform: translateX(0px);
+        h2, p {
+          text-align: center;
+        }
+        p {
+          animation: slide 1s;
+        }
+      }
+    }
+    .shake-btn {
+      padding: 10px 20px;
+      font-size: 24px;
+      background-color: rgb(151, 204, 232);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      &:hover {
+        animation: shakeAnimation 0.5s forwards;
+      }
+    }
+    .shake-scale {
+      font-size: 128px;
+      margin-top: 20px;
+      &:hover {
+        animation: shakeScale 1s forwards;
+      }
+    }
+  }
+}
+
+@keyframes shakeAnimation {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(8deg); }
+  50% { transform: rotateZ(-8deg); }
+  75% { transform: rotateZ(8deg); }
+  100% { transform: rotateZ(0deg); }
+}
+
+@keyframes shakeScale {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(-15deg); }
+  100% { transform: rotateZ(45deg) scale(1.5); }
+}
+
+@keyframes slide {
+  0% { transform: translateX(-200px); }
+  50% { transform: translateX(50px) skew(-30deg); }
+  100% { transform: translateX(0px); }
+}
